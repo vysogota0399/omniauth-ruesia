@@ -3,10 +3,10 @@
 module OmniAuth
   module Strategies
     class Ruesia < OmniAuth::Strategies::OAuth2
-      option :name, "esia"
-      option :client_options, {:site => "https://api.somesite.com"}
-      uid { raw_info['id'] }
+      option :name,  'esia'
+      option :scope, 'fullname'
 
+      uid { raw_info['id'] }
       info do
         {
           first_name:  raw_info['firstName'],
@@ -37,7 +37,11 @@ module OmniAuth
       end
 
       def client
-        ::OAuth2::Client.new(options.client_id, options.client_secret, deep_symbolize(options.client_options))
+        ::OAuth2::EsiaClient.new(
+          options.client_id,
+          options.client_secret,
+          deep_symbolize(options.client_options)
+        )
       end
     end
   end
