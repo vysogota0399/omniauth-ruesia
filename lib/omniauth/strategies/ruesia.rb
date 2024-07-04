@@ -3,7 +3,7 @@
 module OmniAuth
   module Strategies
     class Ruesia < OmniAuth::Strategies::OAuth2
-      option :name, 'esia'
+      option :name, 'ruesia'
       option :client_options, {
         site:          'https://esia.gosuslugi.ru',
         authorize_url: 'aas/oauth2/v2/ac',
@@ -66,7 +66,6 @@ module OmniAuth
             timestamp: timestamp,
             client_certificate_hash: fingerprint,
             client_secret: sign(client_secret_base)
-            # permissions: permissions
           )
         )
       end
