@@ -1,7 +1,7 @@
 # Ruesia
 `OmniAuth::Strategies::Ruesia` is a simple Rack middleware for authorization in the russian Unified identification and authentication system(ЕСИА). Read the OmniAuth docs for detailed instructions: https://github.com/intridea/omniauth. The `…/v2/ac` resource is used as a technical solution for gathering authentication code and `…/v3/te` for JWT. In order to write `client_secret`, you need to send an http post request to any system that can work with data-hash signing algorithms using mechanisms of certified Russian
 cryptographic means of information protection and a certificate
-of the information system and return json response with signature
+of the information system and return json response with signature, for example https://github.com/vysogota0399/cryptopro-sign
 ```
 Request:
 POST /api/sign { test: 'any string' }
