@@ -4,7 +4,7 @@ cryptographic means of information protection and a certificate
 of the information system and return json response with signature, for example https://github.com/vysogota0399/cryptopro-sign
 ```
 Request:
-POST /api/sign { test: 'any string' }
+POST /api/sign { test: 'any base64urlsafe encoded string' }
 
 Response:
 { signature: 'base64urlsafe signature' }
